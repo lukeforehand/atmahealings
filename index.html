@@ -17,25 +17,6 @@
         <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
         <!--[if lte IE 9]>
         <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-
-        <!-- Facebook Pixel Code
-        <script>
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window,document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '365029141061310');
-            fbq('track', 'PageView');
-        </script>
-        <noscript>
-            <img height="1" width="1" src="https://www.facebook.com/tr?id=365029141061310&ev=PageView&noscript=1"/>
-        </noscript> -->
-        <!-- End Facebook Pixel Code -->
-
     </head>
     <body>
 
@@ -159,20 +140,21 @@
             <header>
                 <h2>Location</h2>
             </header>
-            <div id="map" style="height:600px;width:100%;"></div>
+            <div id="map" style="height:400px;width:100%;"></div>
             <script>
                 var addresses = [{ name: 'Atma Healings',
-                link: 'https://goo.gl/maps/FBTZZ9TZcMuJsU1p6',
+                link: 'https://goo.gl/maps/yNZoNcg8mbRPkYJe6',
                 address: '40009 Section 5 Rd, Marengo WI 54846',
                 phone: '(715) 278-3611',
-                location: { lat: 46.5882814, lng: -90.8933319 } }];
+                location: { lat: 46.5882814, lng: -90.8914168 } }];
             function initMap() {
+                var bounds = new google.maps.LatLngBounds();
                 var map = new google.maps.Map(document.getElementById('map'));
                 for (var i in addresses) {
-                    mark(map, addresses[i]);
+                    mark(map, addresses[i], bounds);
                 }
             }
-            function mark(map, address) {
+            function mark(map, address, bounds) {
                 var icon = 'https://maps.gstatic.com/mapfiles/markers2/marker.png';
                 var marker = new google.maps.Marker({
                     map: map,
@@ -194,6 +176,8 @@
                 marker.addListener('click', function() {
                     infowindow.open(map, marker);
                 });
+                bounds.extend(marker.getPosition());
+                map.fitBounds(bounds);
             }
             </script>
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_5MPA-c_cbbdpFg7ZZnhIP7u4F3krLWo&callback=initMap"></script>
