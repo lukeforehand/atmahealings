@@ -34,10 +34,10 @@
     <!-- Nav -->
     <nav id="nav">
         <ul class="container">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#location">Location</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><h3><a href="#home">Home</a></h3></li>
+            <li><h3><a href="#events">Events</a></h3></li>
+            <li><h3><a href="#location">Location</a></h3></li>
+            <li><h3><a href="#contact">Contact</a></h3></li>
         </ul>
     </nav>
 
@@ -139,13 +139,13 @@
                 link: 'https://goo.gl/maps/yNZoNcg8mbRPkYJe6',
                 address: '40009 Section 5 Rd, Marengo WI 54846',
                 phone: '(715) 278-3611',
-                location: { lat: 46.5882814, lng: -90.8914168 } }];
+                location: { lat: 46.58820855492943, lng: -90.89107346437636 } }];
             function initMap() {
                 var bounds = new google.maps.LatLngBounds();
                 var options = {
-                    zoom: 11,
+                    zoom: 17,
                     mapTypeId: 'hybrid',
-                    center: { lat: 46.5882814, lng: -90.8914168 },
+                    center: { lat: 46.58820855492943, lng: -90.89107346437636 },
                     disableDefaultUI: true
                 };
                 var map = new google.maps.Map(document.getElementById('map'), options);
