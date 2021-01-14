@@ -162,18 +162,17 @@
             <div id="map" style="height:600px;width:100%;"></div>
             <script>
                 var addresses = [{ name: 'Atma Healings',
-                link: 'https://goo.gl/maps/cvWyb4qhpwUQbFrS7',
+                link: 'https://goo.gl/maps/FBTZZ9TZcMuJsU1p6',
                 address: '40009 Section 5 Rd, Marengo WI 54846',
                 phone: '(715) 278-3611',
-                location: { lat: 46.4008247, lng: -90.7724357 } }];
+                location: { lat: 46.5882814, lng: -90.8933319 } }];
             function initMap() {
-                var bounds = new google.maps.LatLngBounds();
                 var map = new google.maps.Map(document.getElementById('map'));
                 for (var i in addresses) {
-                    mark(map, addresses[i], bounds);
+                    mark(map, addresses[i]);
                 }
             }
-            function mark(map, address, bounds) {
+            function mark(map, address) {
                 var icon = 'https://maps.gstatic.com/mapfiles/markers2/marker.png';
                 var marker = new google.maps.Marker({
                     map: map,
@@ -195,14 +194,9 @@
                 marker.addListener('click', function() {
                     infowindow.open(map, marker);
                 });
-                bounds.extend(marker.getPosition());
-                map.fitBounds(bounds);
             }
             </script>
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_5MPA-c_cbbdpFg7ZZnhIP7u4F3krLWo&callback=initMap"></script>
-            <footer>
-                <a href="#contact" class="button big scrolly">Contact Us</a>
-            </footer>
         </article>
     </div>
 
