@@ -138,22 +138,21 @@
                 var addresses = [{ name: 'Atma Healings',
                 link: 'https://goo.gl/maps/yNZoNcg8mbRPkYJe6',
                 address: '40009 Section 5 Rd, Marengo WI 54846',
-                phone: '(715) 278-3611',
+                phone: '(715) 254-8505',
                 location: { lat: 46.58820855492943, lng: -90.89107346437636 } }];
             function initMap() {
-                var bounds = new google.maps.LatLngBounds();
                 var options = {
-                    zoom: 17,
+                    zoom: 16,
                     mapTypeId: 'hybrid',
                     center: { lat: 46.58820855492943, lng: -90.89107346437636 },
                     disableDefaultUI: true
                 };
                 var map = new google.maps.Map(document.getElementById('map'), options);
                 for (var i in addresses) {
-                    mark(map, addresses[i], bounds);
+                    mark(map, addresses[i]);
                 }
             }
-            function mark(map, address, bounds) {
+            function mark(map, address) {
                 var icon = 'https://maps.gstatic.com/mapfiles/markers2/marker.png';
                 var marker = new google.maps.Marker({
                     map: map,
@@ -175,8 +174,6 @@
                 marker.addListener('click', function() {
                     infowindow.open(map, marker);
                 });
-                bounds.extend(marker.getPosition());
-                map.fitBounds(bounds);
             }
             </script>
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_5MPA-c_cbbdpFg7ZZnhIP7u4F3krLWo&callback=initMap"></script>
@@ -188,7 +185,10 @@
         <article id="contact" class="container 75%">
             <header>
                 <h2>Contact Us</h2>
-                <p>Samantha Scott | <a href="mailto:samantha_scott_3@hotmail.com">samantha_scott_3@hotmail.com</a> | (715) 278-3611</p>
+                <p>Samantha Scott</p>
+                <p>Email: <a href="mailto:samantha_scott_3@hotmail.com">samantha_scott_3@hotmail.com</a></p>
+                <p>Call or Text: 715.254.8505</p>
+                <p>WhatsApp: 715.278.3611</p>
                 <br />
                 <ul class="social">
                     <li><a target="_blank" href="https://www.facebook.com/atmahandpoke" class="icon fa-facebook"><span class="label">Facebook</span></a></li>

@@ -843,10 +843,10 @@ a {
   -webkit-transition: color .2s ease-in-out;
   -ms-transition: color .2s ease-in-out;
   transition: color .2s ease-in-out;
-  color: #CC143C;
+  color: #666;
   text-decoration: underline; }
   a:hover {
-    color: #EC143C !important; }
+    color: #FFF !important; }
   a img {
     border: 0; }
 
