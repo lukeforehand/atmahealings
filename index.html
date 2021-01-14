@@ -96,14 +96,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor odio tortor, quis dictum ex rhoncus ut. Vivamus aliquam arcu.<br /><br /></p>
                         </article>
                     </div>
-                    <div class="4u 6u(mobile)">
-                        <article class="box style2">
-                            <!-- image link -->
-                            <a class="image featured" target="_blank" href="https://atmahealings.com"><img src="images/mandala.png" alt=""/></a>
-                            <h3>Atma Healings</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor odio tortor, quis dictum ex rhoncus ut. Vivamus aliquam arcu.<br /><br /></p>
-                        </article>
-                    </div>
                 </div>
             </div>
         </article>
@@ -149,7 +141,13 @@
                 location: { lat: 46.5882814, lng: -90.8914168 } }];
             function initMap() {
                 var bounds = new google.maps.LatLngBounds();
-                var map = new google.maps.Map(document.getElementById('map'));
+                var options = {
+                    zoom: 11,
+                    mapTypeId: "hybrid",
+                    center: { lat: 46.5882814, lng: -90.8914168 } },
+                    disableDefaultUI: true
+                };
+                var map = new google.maps.Map(document.getElementById('map'), options);
                 for (var i in addresses) {
                     mark(map, addresses[i], bounds);
                 }
